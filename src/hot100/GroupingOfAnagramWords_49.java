@@ -27,15 +27,15 @@ public class GroupingOfAnagramWords_49 {
             Arrays.sort(charArray);
             String key = new String(charArray);//字符数组转换成字符串
             //4.判断集合中是否存在键
-//            if (map.containsKey(key)) {
-//                map.get(key).add(str);
-//                map.put(key, map.get(key));
-//            }else{
-//                map.put(key, new ArrayList<>());//不存在的键，创建一个list集合，将字符串添加到list集合中
-//                map.get(key).add(str);
-//                map.put(key, map.get(key));
-//            }
-            map.computeIfAbsent(key, k -> new ArrayList<>()).add(str);//集合中存在键，添加值到对应的键值对中，不存在则创建一个list集合，将字符串添加到list集合中
+            if (map.containsKey(key)) {
+                map.get(key).add(str);
+                map.put(key, map.get(key));
+            }else{
+                map.put(key, new ArrayList<>());//不存在的键，创建一个list集合，将字符串添加到list集合中
+                map.get(key).add(str);
+                map.put(key, map.get(key));
+            }
+           // map.computeIfAbsent(key, k -> new ArrayList<>()).add(str);//集合中存在键，添加值到对应的键值对中，不存在则创建一个list集合，将字符串添加到list集合中
         }
 
         return new ArrayList<>(map.values());//创建一个list集合，将map集合的值添加到list集合中
