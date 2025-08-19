@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class AllTheLetterDerivativesInTheString {
+public class AllTheLetterDerivativesInTheString_438 {
     public static void main(String[] args) {
         String s = "cbaebabacd";
         String p = "abc";
